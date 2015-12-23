@@ -1,5 +1,6 @@
 package com.zhanjixun.utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,41 +10,32 @@ import java.util.Map;
 
 public class HttpUtils {
 
-	public static String getResponseAsString(InputStream in, String charset) {
-
-		InputStreamReader reader = null;
-
-		StringBuffer buffer = new StringBuffer();
-
-		int ch = -1;
-		try {
-			reader = new InputStreamReader(in, charset);
-			while ((ch = reader.read()) != -1) {
-				buffer.append(ch);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
+	public static String getResponseAsString(InputStream in, String charset)
+			throws IOException {
+		StringBuffer result = new StringBuffer();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in,
+				charset));
+		String str = null;
+		while ((str = reader.readLine()) != null) {
+			result.append(str);
 		}
-		return buffer.toString();
+		reader.close();
+		return result.toString();
 	}
 
-	public static String getResponseAsString(InputStream in) {
-
-		InputStreamReader reader = new InputStreamReader(in);
-		StringBuffer buffer = new StringBuffer();
-		int ch = -1;
-		try {
-			while ((ch = reader.read()) != -1) {
-				buffer.append(ch);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
+	public static String getResponseAsString(InputStream in) throws IOException {
+		StringBuffer result = new StringBuffer();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		String str = null;
+		while ((str = reader.readLine()) != null) {
+			result.append(str);
 		}
-		return buffer.toString();
+		reader.close();
+		return result.toString();
 	}
 
-	public static String getGETMethodURL(String url, Map<String, String> parames)
-			throws UnsupportedEncodingException {
+	public static String getGETMethodQueryString(String url,
+			Map<String, String> parames) throws UnsupportedEncodingException {
 		StringBuffer getUrl = new StringBuffer(url);
 		if (parames != null && !parames.isEmpty()) {
 			getUrl.append("?");
@@ -63,7 +55,7 @@ public class HttpUtils {
 		if (parames != null && !parames.isEmpty()) {
 			for (Map.Entry<String, String> parm : parames.entrySet()) {
 				result.append(parm.getKey()).append("=")
-						.append(URLEncoder.encode(parm.getValue(), "Utf-8"));
+						.append(URLEncoder.encode(parm.getValue(), "UTF-8"));
 				result.append("&");
 			}
 			result.deleteCharAt(result.length() - 1);
