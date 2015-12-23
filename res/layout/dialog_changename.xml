@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <TextView android:id="@+id/dialog_changeNameTV"
+        android:text="新用户名:"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:textColor="@color/text"
+        android:gravity="center|right"
+        android:textSize="18sp"/>
+    <EditText android:id="@+id/dialog_changeName"
+       android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/dialog_changeNameTV"
+        android:textColor="@color/text"
+        android:inputType="text"
+        android:ems="10"
+        android:textSize="18sp"/>
+    
+
+</RelativeLayout>

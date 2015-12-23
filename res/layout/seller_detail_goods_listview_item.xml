@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sc="http://schemas.android.com/apk/res/com.zhanjixun"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 商铺页面中的商品listview的item样式 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.zhanjixun.views.RoundImageView
+                android:id="@+id/id_seller_detail_goods_listview_item_image"
+                android:layout_width="180px"
+                android:layout_height="180px"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/testfish"
+                sc:borderRadius="@dimen/roundImageViewRadius"
+                sc:type="round" />
+
+            <!-- 海鲜名,应动态获取 -->
+
+            <TextView
+                android:id="@+id/id_seller_detail_goods_listview_item_seaFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/id_seller_detail_goods_listview_item_image"
+                android:layout_toRightOf="@id/id_seller_detail_goods_listview_item_image"
+                android:text="@string/Null"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/id_seller_detail_goods_listview_item_image"
+                android:layout_toRightOf="@id/id_seller_detail_goods_listview_item_image"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/specification"
+                    android:textSize="16sp" />
+                <!-- 规格,应动态获取 -->
+
+                <TextView
+                    android:id="@+id/seller_detail_goods_listview_item_specification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Null"
+                    android:textSize="12sp" />
+
+                <!-- 多少钱一公斤 -->
+
+                <TextView
+                    android:id="@+id/seller_detail_goods_listview_item_perWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero"
+                    android:textColor="#F36436"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="10dp"
+                android:paddingStart="0dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/value_sales" />
+
+                <!-- 销量,动态获取 -->
+
+                <TextView
+                    android:id="@+id/id_seller_detail_goods_listview_item_salesValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero"
+                    android:textColor="#F36436" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/id_seller_detail_goods_listview_item_add_to_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mybutton"
+                android:text="@string/add_to_shoppingcar"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 下面的浅色线条 -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/light_color" />
+
+</LinearLayout>

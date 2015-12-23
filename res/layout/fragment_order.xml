@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="@string/main_order" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/fragment_order_all"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:drawableRight="@color/order_list_black"
+            android:gravity="center"
+            android:text="全都"
+            android:textColor="@color/theme" />
+
+        <TextView
+            android:id="@+id/fragment_order_waitPay"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="待付款"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/fragment_order_waitSend"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="待发货"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/fragment_order_waitCargo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="待收货"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/fragment_order_waitAppraise"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="待评价"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_order_cursor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/link" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/order_home_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

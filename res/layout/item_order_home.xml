@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sc="http://schemas.android.com/apk/res/com.zhanjixun"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/order_home_item_shopTitle_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="商家名称"
+            android:textColor="@color/text"
+            android:textSize="@dimen/title_text_size" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/page_bg" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <com.zhanjixun.views.RoundImageView
+            android:id="@+id/order_home_item_shop_image"
+            android:layout_width="200px"
+            android:layout_height="160px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/good_face"
+            sc:borderRadius="@dimen/roundImageViewRadius"
+            sc:type="round" />
+
+        <TextView
+            android:id="@+id/order_home_item_shop_goodname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/order_home_item_shop_image"
+            android:layout_toRightOf="@+id/order_home_item_shop_image"
+            android:paddingLeft="5dp"
+            android:paddingRight="0dp"
+            android:text="商品名称" />
+
+        <TextView
+            android:id="@+id/order_home_item_shop_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/order_home_item_shop_image"
+            android:layout_toRightOf="@+id/order_home_item_shop_image"
+            android:paddingLeft="5dp"
+            android:paddingRight="0dp"
+            android:text="商品规格" />
+
+        <TextView
+            android:id="@+id/order_home_item_shop_goodprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/order_home_item_shop_image"
+            android:text="¥ 8/斤" />
+
+        <TextView
+            android:id="@+id/order_home_item_shop_goodnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/order_home_item_shop_image"
+            android:layout_alignParentRight="true"
+            android:text="×5" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/page_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/order_home_logistics_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="(含运费￥ 10.00)"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/order_home_item_allmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/order_home_logistics_money"
+            android:paddingLeft="0dp"
+            android:paddingRight="5dp"
+            android:text="￥ 100.00"
+            android:textColor="@color/theme"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/order_home_item_shop_number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/order_home_item_allmoney"
+            android:text="共10件商品  合计："
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/page_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <Button
+            android:id="@+id/order_home_item_Btn"
+            style="@style/myButton"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="加载中..." />
+    </RelativeLayout>
+
+</LinearLayout>

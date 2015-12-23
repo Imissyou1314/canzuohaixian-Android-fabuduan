@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 订单详情的页面 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/back_ground"
+        android:orientation="vertical" >
+
+        <FrameLayout style="@style/TitleTheme" >
+
+            <TextView
+                android:id="@+id/text_home_loc"
+                style="@style/TitleLeftTheme"
+                android:clickable="true"
+                android:drawableLeft="@drawable/title_back"
+                android:drawableStart="@drawable/title_back"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:onClick="onBack"
+                android:singleLine="true"
+                android:text="订单" />
+
+            <TextView
+                android:id="@+id/text_activity_goodlist_title"
+                style="@style/TitleMiddleTheme"
+                android:text="订单详情" />
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/logistice_LinearLayout"
+            android:layout_weight="4"
+            android:background="@drawable/maoxia"
+            android:gravity="center|left" >
+
+            <TextView
+                android:id="@+id/logistice_information_status_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/logistice_status_Title"
+                android:textColor="@color/TitleText"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logistice_status_time1"
+                    android:textColor="@color/TitleText"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/logistice_information_status_Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/TitleText"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logistice_status_time2"
+                    android:textColor="@color/TitleText"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/logistice_information_status_Hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logistice_status_timeHour"
+                    android:textColor="@color/TitleText"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logistice_status_time3"
+                    android:textColor="@color/TitleText"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 收货人信息 -->
+
+        <LinearLayout
+            style="@style/logistice_LinearLayout"
+            android:layout_marginTop="20dp"
+            android:layout_weight="3"
+            android:gravity="center|left"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|right"
+                android:src="@drawable/location_black" />
+
+            <LinearLayout
+                style="@style/logistice_ModuleLinearLayout"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="8"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/logistice_ModuleLinearLayout" >
+
+                    <TextView
+                        style="@style/logistice_ModuleTextView"
+                        android:layout_weight="3"
+                        android:gravity="center|left"
+                        android:text="@string/logistice_user_Title" />
+
+                    <TextView
+                        android:id="@+id/orderinfo__user_name"
+                        style="@style/logistice_ModuleTextView"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="4"
+                        android:gravity="center|left"
+                        android:text="@string/logistice_user_name" />
+
+                    <TextView
+                        android:id="@+id/orderinfo__user_phone"
+                        style="@style/logistice_ModuleTextView"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="6"
+                        android:gravity="center|right"
+                        android:text="@string/logistice_user_PhoneNumber" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/logistice_ModuleLinearLayout"
+                    android:layout_marginTop="0dp"
+                    android:gravity="top" >
+
+                    <TextView
+                        style="@style/logistice_ModuleTextView"
+                        android:layout_weight="3"
+                        android:gravity="top|left"
+                        android:text="@string/logistice_address_Titlt" />
+
+                    <TextView
+                        android:id="@+id/orderinfo__user_address"
+                        style="@style/logistice_ModuleTextView"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="10"
+                        android:gravity="top|left"
+                        android:text="@string/logistice_address" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@color/back_ground" />
+
+        <LinearLayout
+            style="@style/logistice_LinearLayout"
+            android:layout_weight="9"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/logistice_shop_Title"
+                style="@style/logistice_ModuleTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
+                android:text="@string/logistice_shop_Title"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <View
+                style="@style/logistice_Link"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <ListView
+                android:id="@+id/logistice_information_shop_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="2.94" >
+            </ListView>
+
+            <View
+                style="@style/logistice_Link"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center|right"
+                    android:text="@string/logistice_shop_number_Title1"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/logistice_information_status_shop_number"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/logistice_shop_number"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="5"
+                    android:gravity="center|left"
+                    android:text="@string/logistice_shop_money_Title1"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <!-- Sum all money -->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="4"
+                    android:gravity="center|right"
+                    android:text="合计:"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="￥"
+                    android:textColor="@color/theme"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/logistice_information_status_shop_Allmoney"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="6"
+                    android:gravity="center|left"
+                    android:text="@string/logistice_shop_Allmoney"
+                    android:textColor="@color/orange"
+                    android:textSize="15sp" />
+                <!-- Money NumBer -->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="7"
+                    android:gravity="center|right"
+                    android:text="@string/logistice_money_Title1"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/logistice_information_logistics_money"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="@string/logistice_money"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="5"
+                    android:gravity="center|left"
+                    android:text="@string/logistice_money_Title2"
+                    android:textColor="@color/text"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <View
+                style="@style/logistice_Link"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <Button
+                android:id="@+id/logistice_information_status_ensureBtn"
+                style="@style/myButton"
+                android:layout_gravity="right"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/logistice_ensureBtn" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
