@@ -1,157 +1,20 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
 
-
-
-    <style name="ThemeDialog" parent="@android:Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
     </style>
 
-    <style name="loadingDialog" parent="@android:Theme.Dialog">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-    </style>
-
-    <style name="TitleTheme">
-        <item name="android:background">@color/theme</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">45dip</item>
-    </style>
-
-    <style name="TitleMiddleTheme">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">#ffffff</item>
-    </style>
-
-    <style name="logistice_Link">
-        <item name="android:layout_marginLeft">30dp</item>
-        <item name="android:layout_marginRight">30dp</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/Link</item>
-        <item name="android:gravity">center</item>
-    </style>
-
-    <style name="TitleLeftTheme">
-        <item name="android:drawablePadding">10dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">start|center_vertical</item>
-        <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">#ffffff</item>
-    </style>
-
-    <style name="TitleRightTheme">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_gravity">end|center_vertical</item>
-        <item name="android:paddingRight">10dp</item>
-    </style>
-
-    <style name="Login_LinearView">
-        <item name="android:gravity">center</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:layout_width">fill_parent</item>
-    </style>
-
-    <style name="Login_Title">
-        <item name="android:textSize">30sp</item>
-        <item name="android:text">@string/sea_food_Title</item>
-        <item name="android:textColor">@color/login_Title</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:background">@color/Title_transparency</item>
-    </style>
-
-    <style name="Login_Btn">
-        <item name="android:layout_height">47dp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:textColor">@color/login_Btn_text</item>
-        <item name="android:background">@color/login_Btn</item>
-    </style>
-
-    <style name="Login_Text">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/transparency</item>
-        <item name="android:gravity">center</item>
-    </style>
-
-    <style name="Login_Link">
-        <item name="android:layout_marginLeft">50dp</item>
-        <item name="android:layout_marginRight">50dp</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/black</item>
-        <item name="android:gravity">center</item>
-    </style>
-
-    <style name="Login_Edit">
-        <item name="android:layout_marginLeft">58dp</item>
-        <item name="android:layout_marginRight">58dp</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:background">@color/transparency_edit</item>
-        <item name="android:layout_marginTop">10dp</item>
-    </style>
-
-    <style name="logistice_ModuleLinearLayout">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">3</item>
-        <item name="android:gravity">center|left</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
-
-    <style name="logistice_ModuleTextView">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:layout_weight">3</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/text</item>
-    </style>
-
-    <style name="order_grade_Linear">
-        <item name="android:gravity">center</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">25</item>
-    </style>
-
-    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/room_rating_bar</item>
-        <item name="android:numStars">5</item>
-        <item name="android:minHeight">16dp</item>
-        <item name="android:maxHeight">16dp</item>
-    </style>
-
-    <style name="logistice_LinearLayout">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">3</item>
-        <item name="android:gravity">center</item>
-        <item name="android:background">@color/back_ground</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
-    <style name="myButton">
-        <item name="android:background">@drawable/mybutton</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">100dp</item>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
 </resources>

@@ -1,8 +1,7 @@
 package com.zhanjixun.interfaces;
 
-import com.zhanjixun.domain2.BaseResult;
+import java.util.Map;
 
 public interface OnDataReturnListener {
-	public abstract void onDataReturn(String taskTag, BaseResult result,
-			String json);
+	public abstract void onDataReturn(String taskTag, Map<String, Object> result);
 }

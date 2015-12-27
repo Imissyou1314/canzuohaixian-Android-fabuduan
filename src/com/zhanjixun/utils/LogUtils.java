@@ -4,33 +4,38 @@ import android.util.Log;
 
 public class LogUtils {
 
+	private static String tag = getClassName() + "." + getMethodName();
+
+	private static String getClassName() {
+		return new Object() {
+			public String getClassName() {
+				String clazzName = this.getClass().getName();
+				return clazzName.substring(0, clazzName.lastIndexOf('$'));
+			}
+		}.getClassName();
+	}
+
+	private static String getMethodName() {
+		return new Throwable().getStackTrace()[1].getMethodName();
+	}
+
 	public static void i(String msg) {
-		String tag = new Throwable().getStackTrace()[1].getClassName() + "."
-				+ new Throwable().getStackTrace()[1].getMethodName() + "()";
 		Log.i(tag, msg);
 	}
 
 	public static void d(String msg) {
-		String tag = new Throwable().getStackTrace()[1].getClassName() + "."
-				+ new Throwable().getStackTrace()[1].getMethodName() + "()";
 		Log.d(tag, msg);
 	}
 
 	public static void w(String msg) {
-		String tag = new Throwable().getStackTrace()[1].getClassName() + "."
-				+ new Throwable().getStackTrace()[1].getMethodName() + "()";
 		Log.w(tag, msg);
 	}
 
 	public static void e(String msg) {
-		String tag = new Throwable().getStackTrace()[1].getClassName() + "."
-				+ new Throwable().getStackTrace()[1].getMethodName() + "()";
 		Log.e(tag, msg);
 	}
 
 	public static void v(String msg) {
-		String tag = new Throwable().getStackTrace()[1].getClassName() + "."
-				+ new Throwable().getStackTrace()[1].getMethodName() + "()";
 		Log.v(tag, msg);
 	}
 }

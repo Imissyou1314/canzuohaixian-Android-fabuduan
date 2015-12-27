@@ -1,36 +1,29 @@
 package com.zhanjixun.views;
 
-import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
 
-import com.zhanjixun.R;
-
-public class LoadingDialog extends Dialog {
-
-	private TextView msgTv;
+public class LoadingDialog {
+	private ProgressDialog progressDialog;
 
 	public LoadingDialog(Context context) {
-		super(context, R.style.loadingDialog);
-		initDialog();
+		progressDialog = new ProgressDialog(context);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.setMessage("正在加载...");
 	}
 
-	public LoadingDialog(Context context, String message) {
-		super(context, R.style.loadingDialog);
-		initDialog();
-		setMessage(message);
+	public void show() {
+		if (progressDialog != null) {
+			progressDialog.show();
+		}
 	}
 
-	private void initDialog() {
-		View v = View.inflate(getContext(), R.layout.loading_dialog, null);
-		msgTv = (TextView) v.findViewById(R.id.loading_dialog_text);
-		setContentView(v);
-		setCancelable(false);// 设置不可返回消失
-		setCanceledOnTouchOutside(false);// 设置不可按外部消失
+	public boolean dismiss() {
+		if (progressDialog != null && progressDialog.isShowing()) {
+			progressDialog.dismiss();
+			return true;
+		}
+		return false;
 	}
 
-	public void setMessage(CharSequence msg) {
-		msgTv.setText(msg);
-	}
 }

@@ -7,20 +7,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.text.TextUtils;
 
-public class JsonUtil {
-	public static Map<String, Object> getJosn(String jsonStr)
-			throws JSONException {
+public class JSONUtil {
+	public static Map<String, Object> getJosn(String jsonStr) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (!TextUtils.isEmpty(jsonStr)) {
 			JSONObject json = new JSONObject(jsonStr);
 			Iterator<String> i = json.keys();
 			while (i.hasNext()) {
-				String key = i.next();
+				String key = (String) i.next();
 				String value = json.getString(key);
 				if (value.indexOf("{") == 0) {
 					map.put(key.trim(), getJosn(value));
@@ -34,32 +32,17 @@ public class JsonUtil {
 		return map;
 	}
 
-	public static List<Object> getList(String jsonStr) throws JSONException {
-		List<Object> list = new ArrayList<Object>();
+	public static List<Map<String, Object>> getList(String jsonStr)
+			throws Exception {
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		JSONArray ja = new JSONArray(jsonStr);
 		for (int j = 0; j < ja.length(); j++) {
 			String jm = ja.get(j) + "";
-			try {
-				new JSONObject(jm);
-				list.add(getJosn(jm));
-			} catch (JSONException e) {
-				try {
-					new JSONArray(jm);
-					list.add(getList(jm));
-				} catch (JSONException e2) {
-					list.add(jm);
-				}
+			if (jm.indexOf("{") == 0) {
+				Map<String, Object> m = getJosn(jm);
+				list.add(m);
 			}
-
-			// if (jm.startsWith("{")) {
-			// list.add(getJosn(jm));
-			// } else if (jm.startsWith("[")) {
-			// list.add(getList(jm));
-			// } else {
-			// list.add(jm);
-			// }
 		}
 		return list;
 	}
-
 }
